@@ -12,16 +12,14 @@
 class EpsilonGreedy {
 private:
     double epsilon;
-    int NUM_TRIALS;
     vector<Bandit*> bandits;
     double BANDIT_PROBABILTIES[3] = {0.2, 0.3, 0.6};
     int sum;
     random_device rd;
 
 public:
-    EpsilonGreedy(double eps, int n) {
+    EpsilonGreedy(double eps) {
         epsilon = eps;
-        NUM_TRIALS = n;
         for (int i = 0; i < 3; i++) {
             Bandit* b = new Bandit(BANDIT_PROBABILTIES[i]);
             bandits.push_back(b);
@@ -37,6 +35,7 @@ public:
         if (r < epsilon) { // EXPLORE
             uniform_int_distribution<> dist(0,2);
             int randIndex = dist(gen);
+
             bandits[randIndex]->pull();
             if (randIndex == 2)
                 sum++;
@@ -52,13 +51,13 @@ public:
                 }
             }
             bandits[bestBanditIndex]->pull();
-            if (bestBanditIndex == (bandits.size() - 1)) {
+            if (bestBanditIndex == bandits.size()-1) {
                 sum++;
             }
         }
     }
 
-    void experiment() {
+    void experiment(int NUM_TRIALS) {
         for (int i = 0; i < NUM_TRIALS; i++) {
             selectBandit();;
         }

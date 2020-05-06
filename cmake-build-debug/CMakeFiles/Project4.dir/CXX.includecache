@@ -24,9 +24,21 @@ iostream
 vector
 -
 
+/Users/jackbabcock/Desktop/Algorithms/Project4/UCB1.h
+Bandit.h
+/Users/jackbabcock/Desktop/Algorithms/Project4/Bandit.h
+vector
+-
+iostream
+-
+math.h
+/Users/jackbabcock/Desktop/Algorithms/Project4/math.h
+
 /Users/jackbabcock/Desktop/Algorithms/Project4/main.cpp
 iostream
 -
 EpsilonGreedy.h
 /Users/jackbabcock/Desktop/Algorithms/Project4/EpsilonGreedy.h
+UCB1.h
+/Users/jackbabcock/Desktop/Algorithms/Project4/UCB1.h
 

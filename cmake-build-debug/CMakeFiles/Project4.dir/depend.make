@@ -3,5 +3,6 @@
 
 CMakeFiles/Project4.dir/main.cpp.o: ../Bandit.h
 CMakeFiles/Project4.dir/main.cpp.o: ../EpsilonGreedy.h
+CMakeFiles/Project4.dir/main.cpp.o: ../UCB1.h
 CMakeFiles/Project4.dir/main.cpp.o: ../main.cpp
 
