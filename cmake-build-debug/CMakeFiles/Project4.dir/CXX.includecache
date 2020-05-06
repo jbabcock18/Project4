@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jackbabcock/Desktop/Algorithms/Project4/Bandit.h
+ctime
+-
+cstdlib
+-
+iostream
+-
+
+/Users/jackbabcock/Desktop/Algorithms/Project4/main.cpp
+iostream
+-
+Bandit.h
+/Users/jackbabcock/Desktop/Algorithms/Project4/Bandit.h
+
