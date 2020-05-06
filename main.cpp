@@ -1,9 +1,9 @@
 #include <iostream>
-#include "Bandit.h"
+#include "EpsilonGreedy.h"
 
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    Bandit b(0.25);
+    EpsilonGreedy e(0.1, 1000);
+    e.experiment();
     return 0;
 }

@@ -5,6 +5,7 @@
 #ifndef PROJECT4_BANDIT_H
 #define PROJECT4_BANDIT_H
 #include <ctime>
+#include <random>
 #include <cstdlib>
 #include <iostream>
 
@@ -15,19 +16,21 @@ private:
     double probability;
     int a;
     int b;
-    double perceivedProbability;
+    random_device rd;
+    double averageReward;
 
 public:
     Bandit(double p) {
         probability = p;
-        a = 0; // success
-        b = 0; // fail
+        a = 1; // success
+        b = 1; // fail
+        averageReward = 0;
     }
 
     bool pull() {
-        srand( (unsigned)time( NULL ) );
-        rand(); // for some dumb reason this needs to be called once before actually being random.
-        double r = (float) rand()/RAND_MAX;
+        mt19937 gen(rd());
+        uniform_real_distribution<> dis(0,1);
+        double r =  dis(gen);
         update(r);
         return r < probability;
     }
@@ -37,11 +40,13 @@ public:
             a++;
         else
             b++;
-        perceivedProbability = a / (a + b);
+        int n = a + b;
+        double newAverageReward = (double) a /  (a+b);
+        averageReward = newAverageReward;
     }
 
     double getSample() {
-        return perceivedProbability;
+        return averageReward;
     }
 
 

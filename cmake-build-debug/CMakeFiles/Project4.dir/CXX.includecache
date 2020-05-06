@@ -9,14 +9,24 @@
 /Users/jackbabcock/Desktop/Algorithms/Project4/Bandit.h
 ctime
 -
+random
+-
 cstdlib
 -
 iostream
 -
 
+/Users/jackbabcock/Desktop/Algorithms/Project4/EpsilonGreedy.h
+Bandit.h
+/Users/jackbabcock/Desktop/Algorithms/Project4/Bandit.h
+iostream
+-
+vector
+-
+
 /Users/jackbabcock/Desktop/Algorithms/Project4/main.cpp
 iostream
 -
-Bandit.h
-/Users/jackbabcock/Desktop/Algorithms/Project4/Bandit.h
+EpsilonGreedy.h
+/Users/jackbabcock/Desktop/Algorithms/Project4/EpsilonGreedy.h
 
