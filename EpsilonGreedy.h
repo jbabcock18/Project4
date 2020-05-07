@@ -47,7 +47,6 @@ public:
             int bestBanditIndex = 0;
             double bestProbability = 0;
             for (int i = 0; i < bandits.size(); i++) {
-//                cout << i << " " << bandits[i]->getSample() << endl;
                 if (bandits[i]->getSample() > bestProbability) {
                     bestProbability = bandits[i]->getSample();
                     bestBanditIndex = i;

@@ -54,7 +54,6 @@ public:
                 bestBanditValue = values[i];
                 bestBanditIndex = i;
             }
-//            cout << i << " " << values[i] << endl;
         }
         bandits[bestBanditIndex]->pull();
         update(bestBanditIndex);
