@@ -9,12 +9,14 @@
 #include <iostream>
 #include <vector>
 
+
 class EpsilonGreedy {
 private:
     double epsilon;
     vector<Bandit*> bandits;
     double BANDIT_PROBABILTIES[3] = {0.2, 0.3, 0.6};
     int sum;
+    int totalTrials = 0;
     random_device rd;
 
 public:
@@ -45,6 +47,7 @@ public:
             int bestBanditIndex = 0;
             double bestProbability = 0;
             for (int i = 0; i < bandits.size(); i++) {
+//                cout << i << " " << bandits[i]->getSample() << endl;
                 if (bandits[i]->getSample() > bestProbability) {
                     bestProbability = bandits[i]->getSample();
                     bestBanditIndex = i;
@@ -58,11 +61,12 @@ public:
     }
 
     void experiment(int NUM_TRIALS) {
+        totalTrials += NUM_TRIALS;
         for (int i = 0; i < NUM_TRIALS; i++) {
             selectBandit();;
         }
-        double successRate = (double) sum / NUM_TRIALS;
-        cout << successRate << endl;
+        double successRate = (double) sum / totalTrials;
+        cout << successRate * 100 << "%" << endl;
     }
 
 

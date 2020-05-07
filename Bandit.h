@@ -22,8 +22,8 @@ private:
 public:
     Bandit(double p) {
         probability = p;
-        a = 1; // success
-        b = 1; // fail
+        a = 0; // success
+        b = 0; // fail
         averageReward = 0;
     }
 

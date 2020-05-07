@@ -17,6 +17,7 @@ private:
     int pulls[3]  = {1,1,1}; // value formal doesn't work if set to 0
     double values[3] = {0,0,0};
     int sum;
+    int totalTrials = 0;
 public:
     UCB1() {
         for (int i = 0; i < 3; i++) {
@@ -62,11 +63,12 @@ public:
     }
 
     void experiment(int NUM_TRIALS) {
+        totalTrials += NUM_TRIALS;
         for (int i = 0; i < NUM_TRIALS; i++) {
             selectBandit();
         }
-        double successRate = (double) sum / NUM_TRIALS;
-        cout << successRate << endl;
+        double successRate = (double) sum / totalTrials;
+        cout << successRate * 100 << "%" << endl;
     }
 };
 
